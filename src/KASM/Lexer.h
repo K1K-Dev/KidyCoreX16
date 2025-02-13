@@ -32,6 +32,7 @@ enum TokenTypes
     MUL,
     INC,
     DEC,
+    INT_10H,
     LABLE,
     JMP,
     AX,
@@ -55,6 +56,7 @@ enum TokenClass
     REGISTER,
     OPERATOR,
     INSTRUCTION,
+    INTERRUPT,
     NONE
 };
 
@@ -152,7 +154,18 @@ std::vector<Token> lexer(std::string Line)
                 tmpToken.BitDepht = 8;
 
                 tokens.push_back(tmpToken);
-            }    
+            } 
+            else if(tmpLine == "int_10h")
+            {
+                tmpToken.tokenTypes = TokenTypes(INT_10H);
+                tmpToken.tokenClass = TokenClass(INTERRUPT);
+                tmpToken.U8Value = 16;
+                tmpToken.U16Value = 0;
+
+                tmpToken.BitDepht = 8;
+
+                tokens.push_back(tmpToken);
+	    }
             else if(tmpLine == "dec")
             {
                 tmpToken.tokenTypes = TokenTypes(DEC);

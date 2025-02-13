@@ -50,7 +50,7 @@ void ReadBinFile(char* Path)
 	{
 	    file2.read((char*)&Value, sizeof(uint16_t));
 	    file2.seekg(unsigned(Value));
-	    i = unsigned(value);
+	    i = unsigned(Value);
 	}
         Parse(Register, IsLink, Instruction, Value);
         //std::cout << "Инструкции << " << unsigned(Instruction) << std::endl;
@@ -109,7 +109,7 @@ void Parse(const uint8_t &registerPath, const uint8_t &flag, const uint8_t &inst
     }
     else if(instruction == 16)
     {
-        //std::cout << "Работа графики" << std::endl;
+       // std::cout << "Работа графики" << std::endl;
         GraphicInterrupt();
     }
 }

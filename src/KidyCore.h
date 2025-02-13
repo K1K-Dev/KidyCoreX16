@@ -139,8 +139,9 @@ void GraphicInterrupt()
     {
         //DrawText((char)reg.BP);
         TextVideoMemory[CursorY] += (char)reg.BP;
-        //std::cout << TextVideoMemory[0] << std::endl;
+       // std::cout << unsigned(reg.BP) << "sad:" << TextVideoMemory[0] << std::endl;
         CursorX += 1;
+	//TextVideoMemory[CursorY] = 's';
     }
 
     ResetRegisters();

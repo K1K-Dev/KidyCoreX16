@@ -62,5 +62,11 @@ void Parse(std::vector<Token> tokens, char* filepath)
 	//	std::cout << "Lable Name: " << tokens[i+1].Name << "Lable Path: " << filesize + 1;
 	    }
 	}
+	else if(tokens[i].tokenClass == TokenClass(INTERRUPT))
+	{
+	    std::cout << "INT" << std::endl;
+	    WriteU8Value(filepath, tokens[i].U8Value);
+	    i = tokens.size();
+	}
      }
 }

@@ -1,2 +1,4 @@
-mov ax $0
-lable main
+mov ax $16
+mov bp $104
+sub bp $2
+int_10h

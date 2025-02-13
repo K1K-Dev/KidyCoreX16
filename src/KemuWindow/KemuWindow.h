@@ -2,7 +2,7 @@
 
 sf::RenderWindow window(sf::VideoMode(640, 350), "KEMU");
 
-int CursorX, CursorY;
+int CursorX = 10, CursorY = 1;
 void DrawText(char* Text);
 void DrawTextWindow();
 void DrawWindow()
@@ -48,7 +48,7 @@ void DrawTextWindow()
     font.loadFromFile("src/KemuWindow/Fonts/SF.ttf");//передаем нашему шрифту файл шрифта
     for(int i = 0 ; i < 32; i++)
     {
-        sf::Text text(TextVideoMemory[i], font, 15);
+        sf::Text text(TextVideoMemory[i], font, 15);	
         text.setPosition(CursorX * 10 - 100, CursorY * 20);//задаем позицию текста, центр камеры
 	    window.draw(text);//рисую этот текст
     }
